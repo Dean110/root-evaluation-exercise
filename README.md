@@ -46,3 +46,9 @@ I had originally considered using Spring Boot to boot strap Spring application.
 This would allow me to use Spring's dependency injection and Spring Data to leverage a relational database to manage relationships between Drivers and Trips.
 After doing some object modeling, I believe I can create an application that doesn't depend on a framework.
 ### Object Modeling
+- DataFileReader - takes the data file name and reads the content into a `String`.
+- DataProcesser - takes a `String` and parses it looking for the 'Driver' and 'Trip' commands and generating `Driver` and `Trip` objects.
+- Driver - contains the data about the driver name and their trips
+- Trip - contains the start and endtime of a trip and the miles driven.
+- DriverRoster - contains a map of drivers and some methods to access and add data to the drivers.
+- ReportGenerator - Reads a driver roster object and returns a report of the drivers mileage and average speed in the proper order.
